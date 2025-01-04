@@ -1,8 +1,3 @@
----
-title: "Full-Stack Dockerized ML Project"
-output: html_document
----
-
 # Full-Stack Dockerized ML Project
 
 This project demonstrates a full-stack machine learning application, fully containerized with Docker. The project includes:
