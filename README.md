@@ -11,5 +11,5 @@ Ce projet consiste en une application full-stack où :
 ## Comment démarrer
 1. Clonez le projet :
    ```bash
-   git clone <repository-url>
-   cd ml_project
+   git clone "https://github.com/akremjomaa/Mlops-ML-Project.git"
+   cd Mlops-ML-Project
