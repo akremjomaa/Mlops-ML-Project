@@ -1,32 +1,19 @@
-version: '3'
+version: '3.8'
 
 services:
-    mongo:
-        image: mongo
-        container_name: mongo
-        ports:
-            - 27017:27017  
-
-    server:
-        image: mlops-server
-        build:
-            context: ./server
-            dockerfile: Dockerfile
-        container_name: server
-        ports:
-            - 8000:8000
-        depends_on:
-            - mongo  
-
-    streamlit-ui:
-        image: python:3.9-slim  
-        container_name: streamlit-ui
-        build:
-            context: ./client
-            dockerfile: Dockerfile  
-        ports:
-            - 8501:8501
-        depends_on:
-            - server  
-        environment:
-            - SERVER_URL=http://server:8000  
+  server:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+      
+  client:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    ports:
+      - "8501:8501"
+    depends_on:
+      - server
+   
